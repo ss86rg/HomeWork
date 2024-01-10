@@ -3,8 +3,8 @@ import java.util.List;
 
 public class FamilyTree{
 
-    private long humanId;
-    private List<Human> humanList;
+    private int humansId;
+    private  List<Human> humanList;
 
     public FamilyTree() {
         this(new ArrayList<>());
@@ -15,22 +15,17 @@ public class FamilyTree{
     }
 
     public void add (Human human){
-        if (human == null) {
-            return;
-        }
-        if (!humanList.contains(human)){
-            humanList.add(human);
-            human.setId(humanId++);
+        humanList.add(human);
+        human.setId(humansId++);
+        addToParents(human);
+        addToChildren(human);
 
-            addToParents(human);
-            addToChildren(human);
 
-        }
     }
 
 
 
-    public Human getById (long id) {
+    public Human getById (int id) {
         if (!checkId(id)) {
             return null;
         }
@@ -73,7 +68,7 @@ public class FamilyTree{
     }
 
 
-    public boolean setWedding(long humanId1, long humanId2) {
+    public boolean setWedding(int humanId1, int humanId2) {
         if (checkId(humanId1) && checkId(humanId2)) {
             Human human1 = getById(humanId1);
             Human human2 = getById(humanId2);
@@ -83,18 +78,18 @@ public class FamilyTree{
         return false;
     }
 
-
-    public boolean setWedding(Human human1, Human human2) {
-        if (human1.getMarried() == null && human2.getMarried() == null) {
-
-            human1.setMarried(human1);
-            human2.setMarried(human2);
+    public boolean setWedding (Human human1, Human human2){
+        if (human1.getMarried()== null && human2.getMarried() == null){
+            human1.setMarried(human2);
+            human2.setMarried(human1);
             return true;
-
         } else {
             return false;
         }
     }
+
+
+
 
     private void addToParents(Human human) {
         for (Human parent : human.getParents()) {
@@ -110,7 +105,7 @@ public class FamilyTree{
         }
     }
 
-    public boolean remove (long eId){
+    public boolean remove (int eId){
         if (checkId(eId)) {
             Human human = getById(eId);
             return humanList.remove(human);
@@ -120,7 +115,9 @@ public class FamilyTree{
 
 
 
-    private boolean checkId(long id) {return id < humanId && id>=0;}
+    private boolean checkId(int id) {
+        return id < humansId && id>=0;
+    }
 
     public String getInfo () {
         StringBuilder sb = new StringBuilder();

@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Human {
-    private long id;
+    private int id;
     private String name;
     private Gender gender;
-    private static LocalDate birthDate;
-    private LocalDate deathDate;
+    private  LocalDate birthDate;
+    private  LocalDate deathDate;
     private Human parent1;
     private Human parent2;
     private Human married;
@@ -18,7 +18,7 @@ public class Human {
 
 
     public Human(String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
-        id = -1;
+        id = 0;
         this.name = name;
         this.gender = gender;
         this.parent1 = parent1;
@@ -31,6 +31,7 @@ public class Human {
 
 
     public boolean addChild(Human child) {
+
         if (!children.contains(child)) {
             children.add(child);
             return true;
@@ -38,7 +39,7 @@ public class Human {
         return false;
     }
 
-    public void addParent(Human parent) {
+    public boolean addParent(Human parent) {
 
         if (parent.getGender().equals(Gender.Male)) {
             setParent1(parent);
@@ -46,6 +47,23 @@ public class Human {
             setParent2(parent);
 
         }
+        return true;
+    }
+
+    public void setParent1(Human parent1){
+        this.parent1 = parent1;
+    }
+
+    public void setParent2(Human parent2){
+        this.parent2 = parent2;
+    }
+
+    public Human getParent1() {
+        return parent1;
+    }
+
+    public Human getParent2() {
+        return parent2;
     }
 
 
@@ -60,20 +78,11 @@ public class Human {
         return list;
     }
 
-    public int getAge() {
-        return getPeriod(birthDate, Objects.requireNonNullElseGet(deathDate, LocalDate::now));
-    }
-
-    private int getPeriod(LocalDate birthDate, LocalDate deathDate) {
-        Period diff = Period.between(birthDate, deathDate);
-        return diff.getYears();
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long Id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -81,49 +90,48 @@ public class Human {
         return name;
     }
 
-
-    public Human getMarried(){ return married;}
-    public  void setMarried(Human married){this.married = married;}
-
-    public static LocalDate getBirthDate() {
-        return birthDate;
+    public  int getAge() {
+        if (deathDate == null) {
+            getPeriod(birthDate, LocalDate.now());
+        } else {
+            return getPeriod(birthDate, deathDate);
+        }
+        return getPeriod(birthDate, LocalDate.now());
     }
 
-    public LocalDate getDeathDate() {
-        return deathDate;
-    }
 
-    public List<Human> getChildren() {
-        return children;
+    private int getPeriod(LocalDate birthDate, LocalDate deathDate) {
+        Period diff = Period.between(birthDate, deathDate);
+        return diff.getYears();
     }
-    public void setChildren(List<Human> children){this.children = children;}
 
     public void setBirthDate(LocalDate birthDate) {
-        Human.birthDate = birthDate;
+        this.birthDate = birthDate;
     }
 
     public void setDeathDate(LocalDate deathDate) {
         this.deathDate = deathDate;
     }
 
+    public LocalDate getBirthDate() {
+            return birthDate;
+        }
+    public LocalDate getDeathDate() {
+            return deathDate;
+    }
+
+    public List<Human> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Human> children){this.children = children;}
+
+    public Human getMarried(){ return married;}
+
+    public  void setMarried(Human married){this.married = married;}
+
     public Gender getGender() {
         return gender;
-    }
-
-    public Human getParent1() {
-        return parent1;
-    }
-
-    public Human getParent2() {
-        return parent2;
-    }
-
-    public void setParent1(Human parent1){
-        this.parent1 = parent1;
-    }
-
-    public void setParent2(Human parent2){
-        this.parent2 = parent2;
     }
 
 
@@ -171,7 +179,7 @@ public class Human {
         if (parent1 == null) {
             res += ", нет";
         } else {
-            res += "неизвестно";
+            res += parent1.getName();
         }
         return res;
     }
@@ -183,7 +191,7 @@ public class Human {
         if (parent2 == null) {
             res += ", нет";
         } else {
-            res += "неизвестна";
+            res += parent2.getName();
         }
         return res;
     }
@@ -198,7 +206,7 @@ public class Human {
                 res.append(children.get(i).getName());
             }
         } else {
-                res.append(",отсутствуют");
+                res.append(",отсутствуют.");
         }
         return res.toString();
     }
