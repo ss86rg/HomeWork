@@ -17,7 +17,7 @@ public class Human {
     private List<Human> children;
 
 
-    public Human(String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
+    public Human(int id,String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
         id = 0;
         this.name = name;
         this.gender = gender;
@@ -41,9 +41,9 @@ public class Human {
 
     public boolean addParent(Human parent) {
 
-        if (parent.getGender().equals(Gender.Male)) {
+        if (parent.getGender().equals(Gender.male)) {
             setParent1(parent);
-        } else if (parent.getGender().equals(Gender.Female)) {
+        } else if (parent.getGender().equals(Gender.female)) {
             setParent2(parent);
 
         }
