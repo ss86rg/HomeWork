@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Main {
@@ -6,8 +7,26 @@ public class Main {
         System.out.println(tree);
 
 
-
+        save(tree);
     }
+
+
+    private static FamilyTree read(){
+
+        FileHandler fileHandler = new FileHandler();
+        String filePath ="src/tr.txt";
+        return (FamilyTree) fileHandler.read(filePath);
+    }
+
+    private static void save(FamilyTree tree){
+        FileHandler fileHandler = new FileHandler();
+        String filePath ="src/tr.txt";
+        fileHandler.save(tree,filePath);
+    }
+
+
+
+
     static FamilyTree mainTree(){
         FamilyTree tree = new FamilyTree();
         int i=0;
@@ -19,9 +38,9 @@ public class Main {
         tree.add(vasya);
         tree.add(masha);
 
-//
+
         tree.setWedding(vasya, masha);
-//
+
         Human lena = new Human(i++, "Лена", Gender.female, vasya, masha, LocalDate.of(2010,7,23), null);
 
         Human ivan = new Human(i++, "Иван", Gender.male,vasya, masha, LocalDate.of(2005, 7, 1), null);
@@ -32,7 +51,7 @@ public class Main {
         Human Inna = new Human(i++, "Инна", Gender.female,null, null, LocalDate.of(1954,11,25), null);
         Inna.addChild(vasya);
         tree.add(Inna);
-//
+
 
         return tree;
     }

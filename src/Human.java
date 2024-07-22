@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Human {
+public class Human implements Writable,Serializable{
     private int id;
     private String name;
     private Gender gender;
@@ -223,6 +224,16 @@ public class Human {
         Human human = (Human) obj;
         return human.getId() == getId();
 
+    }
+
+    @Override
+    public void save(Serializable serializable, String filePath) {
+
+    }
+
+    @Override
+    public Object read(String filePath) {
+        return null;
     }
 }
 

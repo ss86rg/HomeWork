@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree{
+public class FamilyTree  implements Writable,Serializable{
 
     private int humansId;
     private  List<Human> humanList;
@@ -136,6 +137,15 @@ public class FamilyTree{
         return getInfo();
     }
 
+    @Override
+    public void save(Serializable serializable, String filePath) {
+
+    }
+
+    @Override
+    public Object read(String filePath) {
+        return null;
+    }
 }
 
 
