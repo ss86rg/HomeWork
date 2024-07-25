@@ -132,6 +132,12 @@ public class FamilyTree  implements Iterable<Human>, Writable,Serializable{
         }
         return sb.toString();
     }
+    public void sortByName(){humanList.sort(new FamilyTreeComparatorByName());
+
+    }
+    public void sortByAge(){humanList.sort(new FamilyTreeComparatorByAge());
+
+    }
 
     @Override
     public String toString () {
@@ -148,14 +154,13 @@ public class FamilyTree  implements Iterable<Human>, Writable,Serializable{
         return null;
     }
 
-    public void sortByName() {humanList.sort(new FamilyTreeComparatorByName<>());}
-
-    public void sortByDeathDate() {humanList.sort(new FamilyTreeComparatorByDeath<>());}
 
     @Override
     public Iterator<Human> iterator() {
         return null;
     }
+
+
 }
 
 

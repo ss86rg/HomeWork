@@ -4,7 +4,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Comparable<Human>, Writable,Serializable{
+public class Human implements Writable,Serializable{
     private int id;
     private String name;
     private Gender gender;
@@ -92,6 +92,7 @@ public class Human implements Comparable<Human>, Writable,Serializable{
     public String getName() {
         return name;
     }
+    public void setName(){this.name=name;}
 
     public  int getAge() {
         if (deathDate == null) {
@@ -101,6 +102,7 @@ public class Human implements Comparable<Human>, Writable,Serializable{
         }
         return getPeriod(birthDate, LocalDate.now());
     }
+
 
 
     private int getPeriod(LocalDate birthDate, LocalDate deathDate) {
@@ -136,6 +138,7 @@ public class Human implements Comparable<Human>, Writable,Serializable{
     public Gender getGender() {
         return gender;
     }
+    public void setGender(){this.gender=gender;}
 
 
 
@@ -238,9 +241,6 @@ public class Human implements Comparable<Human>, Writable,Serializable{
         return null;
     }
 
-    @Override
-    public int compareTo(Human o) {
-        return 0;
-    }
+
 }
 
