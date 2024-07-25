@@ -3,9 +3,8 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class Human implements Writable,Serializable{
+public class Human implements Comparable<Human>, Writable,Serializable{
     private int id;
     private String name;
     private Gender gender;
@@ -18,7 +17,7 @@ public class Human implements Writable,Serializable{
     private List<Human> children;
 
 
-    public Human(int id,String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
+    public Human() {
         id = 0;
         this.name = name;
         this.gender = gender;
@@ -28,6 +27,9 @@ public class Human implements Writable,Serializable{
         this.deathDate = deathDate;
         children = new ArrayList<>();
 
+    }
+
+    public Human(int i, String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, Object o) {
     }
 
 
@@ -234,6 +236,11 @@ public class Human implements Writable,Serializable{
     @Override
     public Object read(String filePath) {
         return null;
+    }
+
+    @Override
+    public int compareTo(Human o) {
+        return 0;
     }
 }
 

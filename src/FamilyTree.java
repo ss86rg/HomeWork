@@ -1,8 +1,9 @@
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree  implements Writable,Serializable{
+public class FamilyTree  implements Iterable<Human>, Writable,Serializable{
 
     private int humansId;
     private  List<Human> humanList;
@@ -144,6 +145,15 @@ public class FamilyTree  implements Writable,Serializable{
 
     @Override
     public Object read(String filePath) {
+        return null;
+    }
+
+    public void sortByName() {humanList.sort(new FamilyTreeComparatorByName<>());}
+
+    public void sortByDeathDate() {humanList.sort(new FamilyTreeComparatorByDeath<>());}
+
+    @Override
+    public Iterator<Human> iterator() {
         return null;
     }
 }
