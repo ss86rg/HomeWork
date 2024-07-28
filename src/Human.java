@@ -30,6 +30,13 @@ public class Human implements Writable,Serializable{
     }
 
     public Human(int i, String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, Object o) {
+        this.id = i;
+        this.name = name;
+        this.gender = gender;
+        this.parent1 = parent1;
+        this.parent1 = parent2;
+        this.children = new ArrayList<>();
+        this.birthDate = birthDate;
     }
 
 

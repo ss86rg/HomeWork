@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree  implements Iterable<Human>, Writable,Serializable{
+public class FamilyTree  implements Iterable<Human>, Serializable{
 
     private int humansId;
     private  List<Human> humanList;
@@ -144,20 +144,12 @@ public class FamilyTree  implements Iterable<Human>, Writable,Serializable{
         return getInfo();
     }
 
-    @Override
-    public void save(Serializable serializable, String filePath) {
 
-    }
-
-    @Override
-    public Object read(String filePath) {
-        return null;
-    }
 
 
     @Override
     public Iterator<Human> iterator() {
-        return null;
+        return new FamilyTreeIterator<>(humanList);
     }
 
 

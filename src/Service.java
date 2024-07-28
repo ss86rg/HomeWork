@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Service {
+    private int Id;
     private List<Human> humanList;
     private FamilyTree familyTree;
     public  Service(){
