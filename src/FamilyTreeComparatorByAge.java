@@ -1,10 +1,10 @@
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class FamilyTreeComparatorByAge implements Comparator<Human>, Serializable {
+public class FamilyTreeComparatorByAge<T extends Animals> implements Comparator<T>, Serializable {
 
     @Override
-    public int compare(Human o1, Human o2) {
+    public int compare(T o1, T o2) {
         return Integer.compare(o1.getAge(), o2.getAge());
     }
 }

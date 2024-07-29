@@ -4,7 +4,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Writable,Serializable{
+public class Human implements Animals<Human> , Writable, Serializable{
     private int id;
     private String name;
     private Gender gender;
@@ -46,6 +46,11 @@ public class Human implements Writable,Serializable{
             children.add(child);
             return true;
         }
+        return false;
+    }
+
+    @Override
+    public boolean setWedding(Human human1, Human human2) {
         return false;
     }
 
@@ -94,6 +99,11 @@ public class Human implements Writable,Serializable{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public void add(Human human) {
+
     }
 
     public String getName() {

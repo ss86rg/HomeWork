@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.List;
 
-public class Service {
+public class Service  {
     private int Id;
     private List<Human> humanList;
     private FamilyTree familyTree;
@@ -19,7 +19,7 @@ public class Service {
     public String getHumanListInfo(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Список родственников:\n");
-        for (Human human: familyTree){
+        for (Object human: familyTree){
             stringBuilder.append(human);
             stringBuilder.append("\n");
         }
