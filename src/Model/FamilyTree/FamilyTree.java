@@ -1,3 +1,9 @@
+package Model.FamilyTree;
+
+import Model.Comparator.FamilyTreeComparatorByAge;
+import Model.Comparator.FamilyTreeComparatorByName;
+import Model.Iterator.FamilyTreeIterator;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;

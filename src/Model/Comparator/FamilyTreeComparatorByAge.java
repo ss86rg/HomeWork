@@ -1,3 +1,7 @@
+package Model.Comparator;
+
+import Model.FamilyTree.Animals;
+
 import java.io.Serializable;
 import java.util.Comparator;
 

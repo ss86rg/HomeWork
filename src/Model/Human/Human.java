@@ -1,10 +1,14 @@
+package Model.Human;
+
+import Model.FamilyTree.Animals;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Animals<Human> , Writable, Serializable{
+public class Human implements Animals<Human>, Writable, Serializable{
     private int id;
     private String name;
     private Gender gender;

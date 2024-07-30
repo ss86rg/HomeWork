@@ -1,3 +1,8 @@
+import Model.FamilyTree.FamilyTree;
+import Model.Writable.FileHandler;
+import Model.Human.Gender;
+import Model.Human.Human;
+
 import java.time.LocalDate;
 
 public class Main {

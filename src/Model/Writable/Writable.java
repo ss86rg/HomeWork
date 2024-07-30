@@ -1,3 +1,5 @@
+package Model.Writable;
+
 import java.io.Serializable;
 
 public interface Writable {

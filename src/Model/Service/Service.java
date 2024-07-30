@@ -1,3 +1,9 @@
+package Model.Service;
+
+import Model.FamilyTree.FamilyTree;
+import Model.Human.Gender;
+import Model.Human.Human;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -11,7 +17,7 @@ public class Service  {
 
     }
 
-    public void addHuman(int Id,String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
+    public void addHuman(int Id, String name, Gender gender, Human parent1, Human parent2, LocalDate birthDate, LocalDate deathDate) {
         Human human = new Human(Id++,name,gender,parent1,parent2,birthDate, null);
         familyTree.add(human);
     }
@@ -33,4 +39,16 @@ public class Service  {
     public void sortByAge(){
         familyTree.sortByAge();
     }
+
+    public void save(){
+
+    }
+    public void read(){
+
+    }
+
+    public void addWedding() {
+    }
+
+
 }
