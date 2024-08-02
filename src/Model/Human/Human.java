@@ -1,6 +1,7 @@
 package Model.Human;
 
 import Model.FamilyTree.Animals;
+import Model.Writable.Writable;
 
 import java.io.Serializable;
 import java.time.LocalDate;

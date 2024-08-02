@@ -1,18 +1,23 @@
 package View;
 
+import Model.Human.Gender;
+import Model.Human.Human;
 import Presenter.Presenter;
 
 import java.awt.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-public class ConcoleUI {
+public class ConcoleUI implements View{
     private static final String INPUT_ERROR = "Вы ввели неверное значение";
     private Scanner scanner;
     private Presenter presenter;
     private boolean work;
     private MenuUI menu;
+    private int Id;
 
-    public ConcoleUI(System.in) {
+    public ConcoleUI() {
         scanner = new Scanner(System.in);
         presenter = new Presenter(this);
         work = true;
@@ -34,9 +39,51 @@ public class ConcoleUI {
     public void getHumanListInfo() {
         presenter.getHumanListInfo();
     }
-    public void addHuman(){presenter.getHumanListInfo();}
+    public void addHuman(){
+        System.out.println("Введите имя");
+        String name = scanner.nextLine();
+        System.out.println("Укажите пол (male/female)");
+        Gender gender = null;
+        boolean genderValid = false;
+        while (!genderValid) {
+            try {
+                gender = Gender.valueOf(scanner.nextLine());
+                genderValid = true;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Некорректный ввод. Введите male или female.");
+            }
+        }
 
-    public void addWedding() { presenter.getHumanListInfo(); }
+        System.out.println("Дата рождения (формат yyyy-MM-dd)");
+        LocalDate birthDate = null;
+        boolean validBirthDate = false;
+
+        while (!validBirthDate) {
+            String birthDateInput = scanner.nextLine();
+            try {
+                birthDate = LocalDate.parse(birthDateInput);
+                validBirthDate = true;
+            } catch (DateTimeParseException e) {
+                System.out.println("Некорректный формат даты.");
+            }
+        }
+
+
+        System.out.println("Дата смерти (формат yyyy-MM-dd, или Enter для пропуска)");
+        LocalDate deathDate = null;
+        String deathDateInput = scanner.nextLine();
+        if (!deathDateInput.isEmpty()) {
+            deathDate = LocalDate.parse(deathDateInput);
+        }
+
+        presenter.addHuman(Id++,name,gender,null,null,birthDate, deathDate);}
+
+    public void addWedding (int Id1, int Id2) {
+        System.out.println("номер супруга");
+        Id1 = Integer.parseInt(scanner.nextLine());
+        System.out.println("номер супруги");
+        Id2 = Integer.parseInt(scanner.nextLine());
+        presenter.addWedding(Id1,Id2); }
 
 
     private void execute(){
@@ -76,6 +123,22 @@ public class ConcoleUI {
 
     public void Finish() {
         System.out.println("Приятно было пообщаться");
+
+    }
+
+
+    @Override
+    public void printAnswer(String text) {
+        System.out.println(text);
+    }
+
+    @Override
+    public void start() {
+        hello();
+        while (work){
+            printMenu();
+            execute();
+        }
 
 
     }

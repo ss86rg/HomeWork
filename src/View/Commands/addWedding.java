@@ -11,6 +11,8 @@ public class addWedding extends Command {
 
     @Override
     public void execute() {
-        concoleUI.addWedding();
+        int Id1=0;
+        int Id2=0;
+        concoleUI.addWedding(Id1,Id2);
     }
 }

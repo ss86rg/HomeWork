@@ -11,6 +11,6 @@ public class Finish extends Command {
 
     @Override
     public void execute() {
-        concoleUI.
+        concoleUI.Finish();
     }
 }

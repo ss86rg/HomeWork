@@ -11,6 +11,10 @@ public class Service  {
     private int Id;
     private List<Human> humanList;
     private FamilyTree familyTree;
+
+
+
+    private Human getById ;
     public  Service(){
         familyTree = new FamilyTree();
 
@@ -47,8 +51,21 @@ public class Service  {
 
     }
 
-    public void addWedding() {
+    public void addWedding(int Id1, int Id2) {
+        Human human1 = (Human) familyTree.getById(Id1);
+        Human human2 = (Human) familyTree.getById(Id2);
+
+        if (human1 != null && human2 != null) {
+            boolean success = familyTree.setWedding(human1, human2);
+            if (success) {
+                System.out.println("Свадьба успешно добавлена между " + human1.getName() + " и " + human2.getName());
+            } else {
+                System.out.println("Не удалось добавить свадьбу между " + human1.getName() + " и " + human2.getName() + ". Возможно, один из них уже состоит в браке.");
+            }
+        } else {
+            System.out.println("Ошибка: один из указанных Id не найден в дереве.");
+        }
+
+
     }
-
-
 }
