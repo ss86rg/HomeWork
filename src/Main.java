@@ -47,9 +47,9 @@ public class Main {
 //    static FamilyTree mainTree(){
 //        FamilyTree tree = new FamilyTree();
 //        int i=0;
-//        Human vasya = new Human(i++, "Василий", Gender.male,  null, null, LocalDate.of(1980,6,24), null);
+//        Human vasya = new Human(i++, "Р’Р°СЃСЏ", Gender.male,  null, null, LocalDate.of(1980,6,24), null);
 //
-//        Human masha = new Human( i++, "Маша", Gender.female, null, null, LocalDate.of(1985, 6, 15), null);
+//        Human masha = new Human( i++, "РњР°С€Р°", Gender.female, null, null, LocalDate.of(1985, 6, 15), null);
 //
 //
 //        tree.add(vasya);
@@ -58,14 +58,14 @@ public class Main {
 ////
 //        tree.setWedding(vasya, masha);
 ////
-//        Human lena = new Human(i++, "Лена", Gender.female, vasya, masha, LocalDate.of(2010,7,23), null);
+//        Human lena = new Human(i++, "Р›РµРЅР°", Gender.female, vasya, masha, LocalDate.of(2010,7,23), null);
 //
-//        Human ivan = new Human(i++, "Иван", Gender.male,vasya, masha, LocalDate.of(2005, 7, 1), null);
+//        Human ivan = new Human(i++, "РРІР°РЅ", Gender.male,vasya, masha, LocalDate.of(2005, 7, 1), null);
 //
 //        tree.add (lena);
 //        tree.add (ivan);
 //
-//        Human Inna = new Human(i++, "Инна", Gender.female,null, null, LocalDate.of(1954,11,25), null);
+//        Human Inna = new Human(i++, "РРЅРЅР°", Gender.female,null, null, LocalDate.of(1954,11,25), null);
 //        Inna.addChild(vasya);
 //        tree.add(Inna);
 ////
