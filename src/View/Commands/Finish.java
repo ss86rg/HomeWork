@@ -5,7 +5,7 @@ import View.ConcoleUI;
 public class Finish extends Command {
     public Finish(ConcoleUI concoleUI) {
         super(concoleUI);
-        description = "Завершить работу";
+        description = "Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹";
 
     }
 

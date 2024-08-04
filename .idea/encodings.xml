@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="windows-1251" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
-    <file url="file://$PROJECT_DIR$/src/Main.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/Model/Writable/tr.txt" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/View/Commands/sortByName.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/View/ConcoleUI.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/tr.txt" charset="windows-1251" />
-    <file url="PROJECT" charset="windows-1251" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/src/Presenter/Presenter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/View/ConcoleUI.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/tr.txt" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -10,7 +10,7 @@ import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class ConcoleUI implements View{
-    private static final String INPUT_ERROR = "Вы ввели неверное значение";
+    private static final String INPUT_ERROR = "РћС€РёР±РєР°, РІРІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ";
     private Scanner scanner;
     private Presenter presenter;
     private boolean work;
@@ -25,7 +25,7 @@ public class ConcoleUI implements View{
     }
 
     private void hello(){
-        System.out.println("Доброго времени суток!");
+        System.out.println("Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ");
     }
 
     public void sortByAge() {
@@ -40,9 +40,9 @@ public class ConcoleUI implements View{
         presenter.getHumanListInfo();
     }
     public void addHuman(){
-        System.out.println("Введите имя");
+        System.out.println("Р’РІРµРґРёС‚Рµ РёРјСЏ");
         String name = scanner.nextLine();
-        System.out.println("Укажите пол (male/female)");
+        System.out.println("Р’РІРµРґРёС‚Рµ РїРѕР» (male/female)");
         Gender gender = null;
         boolean genderValid = false;
         while (!genderValid) {
@@ -50,11 +50,11 @@ public class ConcoleUI implements View{
                 gender = Gender.valueOf(scanner.nextLine());
                 genderValid = true;
             } catch (IllegalArgumentException e) {
-                System.out.println("Некорректный ввод. Введите male или female.");
+                System.out.println("РќРµ РІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РІРІРµРґРёС‚Рµ male РёР»Рё female.");
             }
         }
 
-        System.out.println("Дата рождения (формат yyyy-MM-dd)");
+        System.out.println("Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ (С„РѕСЂРјР°С‚ yyyy-MM-dd)");
         LocalDate birthDate = null;
         boolean validBirthDate = false;
 
@@ -64,12 +64,12 @@ public class ConcoleUI implements View{
                 birthDate = LocalDate.parse(birthDateInput);
                 validBirthDate = true;
             } catch (DateTimeParseException e) {
-                System.out.println("Некорректный формат даты.");
+                System.out.println("РќРµ РІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РІРІРµРґРёС‚Рµ РґР°С‚Сѓ РїРѕ РѕР±СЂР°Р·С†Сѓ");
             }
         }
 
 
-        System.out.println("Дата смерти (формат yyyy-MM-dd, или Enter для пропуска)");
+        System.out.println("Р”Р°С‚Р° СЃРјРµСЂС‚Рё  (Р’РІРµРґРёС‚Рµ yyyy-MM-dd, РёР»Рё Enter РµСЃР»Рё РЅРµС‚ РґР°С‚С‹ )");
         LocalDate deathDate = null;
         String deathDateInput = scanner.nextLine();
         if (!deathDateInput.isEmpty()) {
@@ -79,9 +79,9 @@ public class ConcoleUI implements View{
         presenter.addHuman(Id++,name,gender,null,null,birthDate, deathDate);}
 
     public void addWedding (int Id1, int Id2) {
-        System.out.println("номер супруга");
+        System.out.println("РќРѕРјРµСЂ СЃСѓРїСЂСѓРіР°");
         Id1 = Integer.parseInt(scanner.nextLine());
-        System.out.println("номер супруги");
+        System.out.println("РќРѕРјРµСЂ СЃСѓРїСЂСѓРіРё");
         Id2 = Integer.parseInt(scanner.nextLine());
         presenter.addWedding(Id1,Id2); }
 
@@ -122,7 +122,7 @@ public class ConcoleUI implements View{
     }
 
     public void Finish() {
-        System.out.println("Приятно было пообщаться");
+        System.out.println("Р”РѕСЃРІРёРґР°РЅРёСЏ");
 
     }
 

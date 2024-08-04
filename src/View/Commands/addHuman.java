@@ -7,7 +7,7 @@ public class addHuman extends Command {
 
     public addHuman(ConcoleUI concoleUI) {
         super(concoleUI);
-        description = "Добавить родственника";
+        description = "Р”РѕР±Р°РІР»РµРЅРёРµ СЂРѕРґСЃС‚РІРµРЅРЅРёРєР°";
     }
 
     @Override

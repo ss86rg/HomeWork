@@ -5,7 +5,7 @@ import View.ConcoleUI;
 public class sortByAge extends Command {
     public sortByAge(ConcoleUI concoleUI) {
         super(concoleUI);
-        description = "Сортировать по возрасту";
+        description = "РЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РІРѕР·СЂР°СЃС‚Сѓ";
     }
 
     @Override
