@@ -22,6 +22,8 @@ public class FamilyTree<T extends Animals<T>>  implements Iterable<T>, Serializa
         this.humanList = humanList;
     }
 
+    //    соблюдается Принцип открытости/закрытости //  соблюдается  Принцип инверсии зависимостей
+
     public void add (T human){
         humanList.add(human);
         human.setId(humansId++);

@@ -3,8 +3,9 @@ package Model.FamilyTree;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
-
+                                             //    Соблюдается Принцип разделения интерфейса
 public interface Animals <E>extends Serializable {
+
     int getId();
     void setId(int id);
     void add (E human);

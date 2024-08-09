@@ -12,8 +12,12 @@ import static java.awt.SystemColor.menu;
 
 public class Main {
     public static void main(String[] args) {
+                                               // соблюдается принцип единственной ответственности
         View view = new ConcoleUI();
         view.start();
+
+
+
 //        FamilyTree tree = mainTree();
 //        System.out.println(tree);
 

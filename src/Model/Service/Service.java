@@ -13,7 +13,7 @@ public class Service<T extends Animals<T>> {
     private FamilyTree<T> familyTree;
     private Writable writable;
 
-
+                                               //    соблюдается Принцип подстановки Лисков
     public Service(Writable writable) {
         familyTree = new FamilyTree<T>();
         this.writable = writable;

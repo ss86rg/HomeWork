@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-public class ConcoleUI implements View{
+public class ConcoleUI implements View{           //  соблюдается   Принцип разделения интерфейса
     private static final String INPUT_ERROR = "Ошибка, введите значение";
     private Scanner scanner;
     private Presenter presenter;

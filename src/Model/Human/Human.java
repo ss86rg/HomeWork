@@ -21,7 +21,8 @@ public class Human implements Animals<Human>, Writable, Serializable{
 
     private List<Human> children;
 
-
+                                         //    соблюдается Принцип открытости/закрытости
+                                         //  соблюдается  Принцип инверсии зависимостей
     public Human() {
         id = 0;
         this.name = name;

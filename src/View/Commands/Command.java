@@ -2,7 +2,7 @@ package View.Commands;
 
 import View.ConcoleUI;
 
-public abstract class Command {
+public abstract class Command {   //  соблюдается  Принцип инверсии зависимостей
     String description;
     ConcoleUI concoleUI;
 
