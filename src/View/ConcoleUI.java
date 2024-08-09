@@ -25,7 +25,7 @@ public class ConcoleUI implements View{
     }
 
     private void hello(){
-        System.out.println("Здравствуйте");
+        System.out.println("\n\n Здравствуйте!\n");
     }
 
     public void sortByAge() {
@@ -85,6 +85,16 @@ public class ConcoleUI implements View{
         Id2 = Integer.parseInt(scanner.nextLine());
         presenter.addWedding(Id1,Id2); }
 
+    public void addParent(int childId, int Id1, int Id2) {
+        System.out.println("Выбрать  Id ребенка, которому добавить отца и мать");
+        childId = Integer.parseInt(scanner.nextLine());
+        System.out.println("Id отца");
+        Id1 = Integer.parseInt(scanner.nextLine());
+        System.out.println("Id матери");
+        Id2 = Integer.parseInt(scanner.nextLine());
+        presenter.addParent(childId,Id1, Id2);
+    }
+
 
     private void execute(){
         String line = scanner.nextLine();
@@ -97,14 +107,13 @@ public class ConcoleUI implements View{
     }
 
     private boolean checkTextForInt(String text){
-        if (text.matches("[1-7]+")){
+        if (text.matches("[1-9]+")){
             return true;
         } else {
             inputError();
             return false;
         }
     }
-
     private boolean checkCommand(int numCommand){
         if (numCommand <= menu.getSize()){
             return true;
@@ -113,6 +122,7 @@ public class ConcoleUI implements View{
             return false;
         }
     }
+
     private void printMenu(){
         System.out.println(menu.menu());
     }
@@ -131,7 +141,6 @@ public class ConcoleUI implements View{
     public void printAnswer(String text) {
         System.out.println(text);
     }
-
     @Override
     public void start() {
         hello();
@@ -142,5 +151,13 @@ public class ConcoleUI implements View{
 
 
     }
+    public void save(){
+        presenter.save();
+    }
+
+    public void read(){
+        presenter.read();
+    }
+
 
 }

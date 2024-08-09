@@ -14,8 +14,11 @@ public class MenuUI {
         commandList.add(new getHumanListInfo(concoleUI));
         commandList.add(new addHuman(concoleUI));
         commandList.add(new addWedding(concoleUI));
+        commandList.add(new addParent(concoleUI));
         commandList.add(new sortByName(concoleUI));
         commandList.add(new sortByAge(concoleUI));
+        commandList.add(new Save(concoleUI));
+        commandList.add(new Read(concoleUI));
         commandList.add(new Finish(concoleUI));
     }
 

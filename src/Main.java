@@ -12,6 +12,8 @@ import static java.awt.SystemColor.menu;
 
 public class Main {
     public static void main(String[] args) {
+        View view = new ConcoleUI();
+        view.start();
 //        FamilyTree tree = mainTree();
 //        System.out.println(tree);
 
@@ -21,25 +23,24 @@ public class Main {
 //        tree.sortByName();
 //        System.out.println(tree);
 //        tree.sortByAge();
-        View view = new ConcoleUI();
-        view.start();
+
 
 
     }
 
 
-    private static FamilyTree read(){
-
-        FileHandler fileHandler = new FileHandler();
-        String filePath ="src/tr.txt";
-        return (FamilyTree) fileHandler.read(filePath);
-    }
-
-    private static void save(FamilyTree tree){
-        FileHandler fileHandler = new FileHandler();
-        String filePath ="src/tr.txt";
-        fileHandler.save(tree,filePath);
-    }
+//    private static FamilyTree read(){
+//
+//        FileHandler fileHandler = new FileHandler();
+//        String filePath ="";
+//        return (FamilyTree) fileHandler.read(filePath);
+//    }
+//
+//    private static void save(FamilyTree tree){
+//        FileHandler fileHandler = new FileHandler();
+//        String filePath ="";
+//        fileHandler.save(tree,filePath);
+//    }
 
 
 
