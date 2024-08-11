@@ -78,21 +78,34 @@ public class ConcoleUI implements View{           //  соблюдается   �
 
         presenter.addHuman(Id++,name,gender,null,null,birthDate, deathDate);}
 
-    public void addWedding (int Id1, int Id2) {
-        System.out.println("Номер супруга");
-        Id1 = Integer.parseInt(scanner.nextLine());
-        System.out.println("Номер супруги");
-        Id2 = Integer.parseInt(scanner.nextLine());
-        presenter.addWedding(Id1,Id2); }
+    public void addWedding(int Id1, int Id2) {
+        try {
+            System.out.println("Номер супруга");
+            Id1 = Integer.parseInt(scanner.nextLine());
+            System.out.println("Номер супруги");
+            Id2 = Integer.parseInt(scanner.nextLine());
+            presenter.addWedding(Id1, Id2);
+            System.out.println(" Супруг: " + Id1 + "\n Супруга: " + Id2 + "\n Добавлены в древо\n");
+
+        } catch (NumberFormatException e) {
+            System.out.println("Ошибка: Некорректный формат числа. Пожалуйста, введите целое число.");
+        }
+    }
 
     public void addParent(int childId, int Id1, int Id2) {
-        System.out.println("Выбрать  Id ребенка, которому добавить отца и мать");
-        childId = Integer.parseInt(scanner.nextLine());
-        System.out.println("Id отца");
-        Id1 = Integer.parseInt(scanner.nextLine());
-        System.out.println("Id матери");
-        Id2 = Integer.parseInt(scanner.nextLine());
-        presenter.addParent(childId,Id1, Id2);
+        try {
+            System.out.println("Выбрать  Id ребенка, которому добавить отца и мать");
+            childId = Integer.parseInt(scanner.nextLine());
+            System.out.println("Id отца");
+            Id1 = Integer.parseInt(scanner.nextLine());
+            System.out.println("Id матери");
+            Id2 = Integer.parseInt(scanner.nextLine());
+            presenter.addParent(childId,Id1, Id2);
+            System.out.println("Дети  и родители добавлены в древо");
+        }catch (NumberFormatException e){
+            System.out.println(" Ошибка, Не верное значение ");
+        }
+
     }
 
 
@@ -153,10 +166,13 @@ public class ConcoleUI implements View{           //  соблюдается   �
     }
     public void save(){
         presenter.save();
+        System.out.println("Древо сохранено");
     }
 
     public void read(){
         presenter.read();
+        System.out.println("Древо загружено, нажмите 1");
+
     }
 
 
